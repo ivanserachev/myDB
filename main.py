@@ -152,7 +152,7 @@ while i<1000000:
 fileProc.closeFile()
 fileProc.replaceFileName()
 
-param='val1'
+param='val3'
 search=SearchEngine(directory, 1,param)
 fileCollect=search.searchFile().copy()
 search.searchFile()
