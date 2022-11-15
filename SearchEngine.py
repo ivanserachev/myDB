@@ -1,9 +1,10 @@
-import main
 import os
 
 class SearchEngine:
-    def __init__(self, directory:str, search_value, paramname:str, separator:list= [226, 128, 140]):
+    def __init__(self, directory:str,paramname:str, separator:list= [226, 128, 140]):
         self.directory=directory
+        print('input search value')
+        search_value=input()
         self.s_value=search_value
         self.paramname=paramname
         self.separator=separator
@@ -41,9 +42,9 @@ class SearchEngine:
 
         return fileCollection
 
-    def searchValue(self):
+    def searchValue(self, fileCollect:list):
 
-        for file in main.fileCollect:
+        for file in fileCollect:
             fl=open(f'/home/ivan/Documents/DB/{file}','rb')
             lines=fl.readlines()
             for l in lines:

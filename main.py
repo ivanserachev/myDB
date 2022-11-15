@@ -1,36 +1,38 @@
-import cpuinfo
 import datetime
 import random
 import FileProcessor as fp
 import SearchEngine as se
 
-# dictCPU=cpuinfo.get_cpu_info()
-# partSize=dictCPU['l3_cache_size']
 
 wr_list = [1,4,21]
 fileCollect=[]
-param_list=['val1','val2','val3']
+
+
 minelem=wr_list.copy()
 maxelem=wr_list.copy()
-path='/home/ivan/Documents/DB/base'
+
 directory='/home/ivan/Documents/DB/'
 stt=datetime.datetime.now()
+path='/home/ivan/Documents/DB/base'
 
-fileProc=fp.FileProcessing(path,wr_list,param_list)
-fileProc.openFileWrite()
-i=0
-while i<1000000:
-    wr_list=[random.randint(1,1000), random.randint(1,1000000),random.randint(1,1000000)]
-    fileProc.addDataFunc()
-    fileProc.maxElem()
-    fileProc.minElem()
-    i+=1
-fileProc.closeFile()
-fileProc.replaceFileName()
-
+# fileProc=fp.FileProcessing(param_list,path)
+# fileProc.openFileWrite()
+#
+# i=0
+# while i<1000000:
+#     wr_list=[random.randint(1,1000), random.randint(1,1000000),random.randint(1,1000000)]
+#     fileProc.addDataFunc(wr_list)
+#     fileProc.maxElem(wr_list,maxelem)
+#     fileProc.minElem(wr_list, minelem)
+#     i+=1
+# fileProc.closeFile()
+# fileProc.replaceFileName(minelem, maxelem)
+#
 param='val3'
-search=se.SearchEngine(directory, 1,param)
+search=se.SearchEngine(directory, param)
 fileCollect=search.searchFile().copy()
 search.searchFile()
-search.searchValue()
+search.searchValue(fileCollect)
 print(datetime.datetime.now()-stt)
+
+
