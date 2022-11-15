@@ -30,6 +30,9 @@ class FileProcessing:
         self.fl.close()
 
     def addDataFunc(self, wr_list:list):
+        if len(wr_list)> len(self.param_list):
+            message='there is more elements in array then columns'
+            return message
 
         try:
             for wr in wr_list:

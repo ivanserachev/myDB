@@ -3,10 +3,8 @@ import random
 import FileProcessor as fp
 import SearchEngine as se
 
-
 wr_list = [1,4,21]
 fileCollect=[]
-
 
 minelem=wr_list.copy()
 maxelem=wr_list.copy()
